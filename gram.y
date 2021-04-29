@@ -80,6 +80,7 @@ statement: error
  | assignment
  | BLANK_TAB_SPACE {yylineno++;}
  ;
+
 assignment:
  identificadores ASSIGN exprs {printf("ids=%d, exps=%d, linea=%d\n",cont,exps,yylineno);
  if (cont!=exps){
@@ -106,6 +107,7 @@ expr:
  | boolExpr 
  | aritExpr 
  | posLista 
+ | functionCall
  | PAR_ABRE expr PAR_CIERRA
  | ER {printf("Pls\n");}
  ;
@@ -152,6 +154,11 @@ parametros:
 IDENTIFICADOR
  | parametros COMA parametros
 ;
+
+functionCall:
+    IDENTIFICADOR PAR_ABRE listaIN PAR_CIERRA
+    | IDENTIFICADOR PAR_ABRE PAR_CIERRA
+
 %%
 /* int main(void) {
  yyparse();

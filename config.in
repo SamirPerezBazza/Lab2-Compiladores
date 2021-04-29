@@ -1,4 +1,0 @@
-def func():
-a = 2 + 2
-_b = a - 3
-return x
