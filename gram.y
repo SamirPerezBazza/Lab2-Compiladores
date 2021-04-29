@@ -70,13 +70,15 @@ program:
  |
  ;
 statements:
- statement
- | statement BLANK_TAB_SPACE {yylineno++;}
+ statements statement
+ | 
 ; 
 statement: error
  | expr 
  | assignment
+ | BLANK_TAB_SPACE {yylineno++;}
  ;
+ 
 assignment:
  identificadores ASSIGN exprs {printf("ids=%d, exps=%d, linea=%d\n",cont,exps,yylineno);
  if (cont!=exps){
@@ -127,6 +129,7 @@ lista:
 listaIN:
  expr 
  | listaIN COMA expr 
+;
 
 posLista:
  IDENTIFICADOR COR_ABRE aritExpr COR_CIERRA
@@ -135,8 +138,8 @@ posLista:
  ;
 
 func:
- funcDeclare statements {printf("func\n");}
- | funcDeclare statements RETURN expr {yylineno++;printf("func w/return\n");}
+ funcDeclare statements{printf("func\n");}
+ | funcDeclare statements RETURN expr
 ;
 
 funcDeclare:
