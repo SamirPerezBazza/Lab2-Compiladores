@@ -1,23 +1,25 @@
-def funcion(a,b,c):
-    a = 2 + 2
-    _b = a - 3
-    c123 = a * 3
-    c = a + b / 3
-    z=[]
-    #xd
-    part=True
-    x=[1,2]
+a = 2 + 2
+_b = a - 3
+c123 = a * 3
+c = a + b / 3
+z=[]
+#xd
+part=True
+x=[1,2]
 
-    #comentario
-    #comentario2
-    a=2**3
+#comentario
+#comentario2
+a=2**3
 
-    a=True
-    _b=False
-    c=not _b
+a=True
+_b=False
+c=not _b
 
-    z=True
+z=True
 
-    z=a is _b
-    1 in a
-    a='xd'
+z=a is _b
+1 in a
+a='xd'
+
+a,b = 1,2
+a,b,c,d,e,f,g = [1,2], "Hola", [], 3, True, False, a==2

@@ -63,8 +63,7 @@
 %}
 %%
 program:
- program statements BLANK_TAB_SPACE {yylineno++;printf("statementNewLine\n");} 
- | program statements {printf("statement\n");}
+ program statements {printf("statement\n");}
  | program BLANK_TAB_SPACE {yylineno++;printf("vacio\n");} 
  | program func {printf("funcion\n");}
  |
@@ -76,11 +75,12 @@ statements:
 statement: error
  | expr 
  | assignment
+ | statement BLANK_TAB_SPACE {yylineno++;}
  ;
 assignment:
- identificadores ASSIGN expr {printf("ids=%d, exps=%d, linea=%d\n",cont,exps,yylineno);
+ identificadores ASSIGN exprs {printf("ids=%d, exps=%d, linea=%d\n",cont,exps,yylineno);
  if (cont!=exps){
-     yyerror("syntax error");
+     yyerror("syntax error mio");
  }
  cont=0;exps=0;
  }
@@ -91,14 +91,18 @@ identificadores:
  | identificadores COMA identificadores {printf("ids \n");}
 ;
 
-expr: {exps++;}
- ENTERO {/*  printf("lineExpr=%d\n", yylineno); */}
- | CADENA {exps++;}
- | lista {exps++;}
- | expr COMA expr 
- | boolExpr 
- | aritExpr 
- | posLista {exps++;}
+exprs:
+  expr {exps++;} 
+  | exprs COMA expr {exps++;}
+
+expr:
+ ENTERO { /*  printf("lineExpr=%d\n", yylineno); */}
+ | CADENA
+ | lista {printf("lista \n");}
+ | boolExpr
+ | aritExpr
+ | posLista
+ | PAR_ABRE expr PAR_CIERRA
  | ER {printf("Pls\n");}
  ;
 
@@ -108,16 +112,21 @@ aritExpr:
 
 boolExpr:
  expr OPERADOR_COMP expr {/* printf("expbool \n"); */}
- | IDENTIFICADOR {exps++;}
- | BOOL_STATE 
+ | IDENTIFICADOR
+ | BOOL_STATE
  | expr IN expr
  | NOT expr
  ;
 
 lista:
  COR_ABRE COR_CIERRA
- | COR_ABRE expr COR_CIERRA
+ | COR_ABRE listaIn COR_CIERRA
  ;
+
+listaIn:
+   expr
+   | listaIn COMA expr
+   ;
 
 posLista:
  IDENTIFICADOR COR_ABRE aritExpr COR_CIERRA
