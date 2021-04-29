@@ -57,6 +57,7 @@
  int yylex(void);
  int cont = 0; 
  int exps = 0;
+ int yydebug=1;
  extern int yylineno;
  /* extern FILE *yyin;
  extern int yylineno; */
@@ -70,7 +71,7 @@ program:
  ;
 statements:
  statement
- | statements statement
+ | statement BLANK_TAB_SPACE {yylineno++;}
 ; 
 statement: error
  | expr 
@@ -80,7 +81,7 @@ statement: error
 assignment:
  identificadores ASSIGN exprs {printf("ids=%d, exps=%d, linea=%d\n",cont,exps,yylineno);
  if (cont!=exps){
-     yyerror("syntax error mio");
+    yyerror("syntax error ASSINGMENT");
  }
  cont=0;exps=0;
  }
@@ -92,41 +93,41 @@ identificadores:
 ;
 
 exprs:
-  expr {exps++;} 
-  | exprs COMA expr {exps++;}
+ expr {exps++;}
+ | exprs COMA expr {exps++;}
+;
 
-expr:
- ENTERO { /*  printf("lineExpr=%d\n", yylineno); */}
- | CADENA
- | lista {printf("lista \n");}
- | boolExpr
- | aritExpr
- | posLista
+expr: 
+ ENTERO {/*  printf("lineExpr=%d\n", yylineno); */}
+ | CADENA 
+ | lista 
+ | boolExpr 
+ | aritExpr 
+ | posLista 
  | PAR_ABRE expr PAR_CIERRA
  | ER {printf("Pls\n");}
  ;
 
 aritExpr:
- expr OPERADOR expr
+ expr OPERADOR expr   
  ;
 
 boolExpr:
  expr OPERADOR_COMP expr {/* printf("expbool \n"); */}
- | IDENTIFICADOR
- | BOOL_STATE
- | expr IN expr
+ | IDENTIFICADOR 
+ | BOOL_STATE 
+ | expr IN expr 
  | NOT expr
  ;
 
 lista:
  COR_ABRE COR_CIERRA
- | COR_ABRE listaIn COR_CIERRA
+ | COR_ABRE listaIN COR_CIERRA 
  ;
 
-listaIn:
-   expr
-   | listaIn COMA expr
-   ;
+listaIN:
+ expr 
+ | listaIN COMA expr 
 
 posLista:
  IDENTIFICADOR COR_ABRE aritExpr COR_CIERRA
@@ -135,18 +136,18 @@ posLista:
  ;
 
 func:
- funcDeclare BLANK_TAB_SPACE statements {yylineno++;printf("func\n");}
- | funcDeclare BLANK_TAB_SPACE statements BLANK_TAB_SPACE RETURN expr {yylineno+=2;printf("func w/return\n");}
+ funcDeclare statements {printf("func\n");}
+ | funcDeclare statements RETURN expr {yylineno++;printf("func w/return\n");}
 ;
 
 funcDeclare:
- DEF IDENTIFICADOR PAR_ABRE parametros PAR_CIERRA COLON {printf("fundeclare");}
- | DEF IDENTIFICADOR PAR_ABRE PAR_CIERRA COLON 
+ DEF IDENTIFICADOR PAR_ABRE parametros PAR_CIERRA COLON BLANK_TAB_SPACE {yylineno++;printf("fundeclare\n");}
+ | DEF IDENTIFICADOR PAR_ABRE PAR_CIERRA COLON BLANK_TAB_SPACE {yylineno++;}
 ;
 
 parametros:
 IDENTIFICADOR
- | identificadores COMA identificadores
+ | parametros COMA parametros
 ;
 %%
 /* int main(void) {
