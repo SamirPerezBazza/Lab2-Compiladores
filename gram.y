@@ -78,7 +78,7 @@ statement: error
  | assignment
  | BLANK_TAB_SPACE {yylineno++;}
  ;
- 
+
 assignment:
  identificadores ASSIGN exprs {printf("ids=%d, exps=%d, linea=%d\n",cont,exps,yylineno);
  if (cont!=exps){
@@ -106,8 +106,14 @@ expr:
  | aritExpr 
  | posLista 
  | PAR_ABRE expr PAR_CIERRA
+ | functCall
  | ER {printf("Pls\n");}
  ;
+
+functCall:
+  IDENTIFICADOR PAR_ABRE listaIN PAR_CIERRA
+  | IDENTIFICADOR PAR_ABRE PAR_CIERRA
+;
 
 aritExpr:
  expr OPERADOR expr   
@@ -138,7 +144,7 @@ posLista:
  ;
 
 func:
- funcDeclare statements{printf("func\n");}
+ funcDeclare statements {printf("func\n");}
  | funcDeclare statements RETURN expr
 ;
 
