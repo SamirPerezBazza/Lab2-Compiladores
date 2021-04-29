@@ -76,7 +76,6 @@ statements:
 statement: error
  | expr 
  | assignment
- | statement BLANK_TAB_SPACE {yylineno++;}
  ;
 assignment:
  identificadores ASSIGN exprs {printf("ids=%d, exps=%d, linea=%d\n",cont,exps,yylineno);
