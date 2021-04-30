@@ -31,6 +31,7 @@ imaginario ({entero}|{decimal})[jJ]
 "print" return PRINT;
 
  /* operador de comparación */
+
 [<>] return OPERADOR_COMP;
 "<=" return OPERADOR_COMP;
 ">=" return OPERADOR_COMP;
@@ -47,7 +48,7 @@ imaginario ({entero}|{decimal})[jJ]
 
 
 
-\n {return BLANK_TAB_SPACE;} //Incremento la variable de linea
+\n return BLANK_TAB_SPACE;
  /* operators */
 [-+/*%&|^~] return OPERADOR;
 "**" return OPERADOR;
@@ -96,6 +97,9 @@ imaginario ({entero}|{decimal})[jJ]
 
  /* anything else is an error */
 . return ER;
+
+ /* <<EOF>> return END_FILE; */
+
 %%
 int yywrap(void) {
  return 1;

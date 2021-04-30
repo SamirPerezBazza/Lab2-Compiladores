@@ -54,9 +54,7 @@
 %token COLON 34
 %token PUNTO 35
 
-
-%token RESERVADA 48
-%token BLANK_TAB_SPACE 49
+%token BLANK_TAB_SPACE 36
 
 
 
@@ -75,8 +73,8 @@
 %}
 %%
 program:
- program statements {printf("statement\n");}
- | program BLANK_TAB_SPACE {yylineno++;printf("vacio\n");} 
+ program statements 
+ | program BLANK_TAB_SPACE {yylineno++;} 
  |
  ;
 statements:
@@ -99,17 +97,17 @@ statement: error
  ;
 
 assignment:
- identificadores ASSIGN exprs {printf("ids=%d, exps=%d, linea=%d\n",cont,exps,yylineno);
+ identificadores ASSIGN exprs {
  if (cont!=exps){
-    yyerror("syntax error ASSINGMENT");
+    yyerror("syntax error");
  }
  cont=0;exps=0;
  }
  ;
 
 identificadores:
- IDENTIFICADOR {cont++;printf("id\n");}
- | identificadores COMA identificadores {printf("ids \n");}
+ IDENTIFICADOR {cont++;}
+ | identificadores COMA identificadores
 ;
 
 exprs:
@@ -123,11 +121,11 @@ expr:
  | lista 
  | matriz
  | boolExpr 
- | aritExpr 
+ | aritExpr {printf("Arithmetic\n");}
  | posLista 
  | PAR_ABRE expr PAR_CIERRA
  | functCall
- | ER {printf("Pls\n");}
+ | ER
  ;
 
 numeros:
@@ -147,7 +145,7 @@ aritExpr:
  ;
 
 boolExpr:
- expr OPERADOR_COMP expr {/* printf("expbool \n"); */}
+ expr OPERADOR_COMP expr 
  | IDENTIFICADOR 
  | BOOL_STATE 
  | expr IN expr 
@@ -172,6 +170,8 @@ listaCuerpo:
  COR_ABRE aritExpr COR_CIERRA
  | COR_ABRE ENTERO COR_CIERRA
  | COR_ABRE IDENTIFICADOR COR_CIERRA
+ | COR_ABRE matriz COR_CIERRA
+ | COR_ABRE posLista COR_CIERRA
 ;
 
 posLista:
@@ -179,12 +179,12 @@ posLista:
  ;
 
 func:
- funcDeclare statements {printf("func\n");}
+ funcDeclare statements 
  | funcDeclare statements RETURN expr
 ;
 
 funcDeclare:
- DEF IDENTIFICADOR PAR_ABRE parametros PAR_CIERRA COLON BLANK_TAB_SPACE {yylineno++;printf("fundeclare\n");}
+ DEF IDENTIFICADOR PAR_ABRE parametros PAR_CIERRA COLON BLANK_TAB_SPACE {yylineno++;}
  | DEF IDENTIFICADOR PAR_ABRE PAR_CIERRA COLON BLANK_TAB_SPACE {yylineno++;}
 ;
 

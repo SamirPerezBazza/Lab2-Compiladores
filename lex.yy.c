@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 65
-#define YY_END_OF_BUFFER 66
+#define YY_NUM_RULES 66
+#define YY_END_OF_BUFFER 67
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -362,23 +362,23 @@ struct yy_trans_info
 	};
 static const flex_int16_t yy_accept[160] =
     {   0,
-        0,    0,   66,   64,   54,   28,   64,   64,   55,   29,
-       29,   64,   34,   35,   29,   29,   52,   29,   64,   29,
-       57,   53,   51,   15,   38,   15,   56,   56,   56,   36,
-       37,   29,   56,   56,   56,   56,   56,   56,   56,   56,
-       56,   56,   56,   56,   56,   29,   29,   19,    0,   61,
-        0,   50,   46,    0,   62,    0,   30,   41,   57,   39,
-       40,    0,   59,   31,   42,   59,   57,   63,   60,   58,
-       32,   16,   20,   18,   17,   33,   56,   56,   56,   48,
-       56,   56,   56,   56,   56,   56,    3,   56,   21,   24,
-       56,   56,   23,   56,   56,   56,   56,   56,   47,   49,
+        0,    0,   67,   65,   55,   28,   65,   65,   56,   29,
+       29,   65,   34,   35,   29,   29,   52,   29,   54,   29,
+       58,   53,   51,   15,   38,   15,   57,   57,   57,   36,
+       37,   29,   57,   57,   57,   57,   57,   57,   57,   57,
+       57,   57,   57,   57,   57,   29,   29,   19,    0,   62,
+        0,   50,   46,    0,   63,    0,   30,   41,   58,   39,
+       40,    0,   60,   31,   42,   60,   58,   64,   61,   59,
+       32,   16,   20,   18,   17,   33,   57,   57,   57,   48,
+       57,   57,   57,   57,   57,   57,    3,   57,   21,   24,
+       57,   57,   23,   57,   57,   57,   57,   57,   47,   49,
 
-       59,   63,   43,    0,   59,   63,   44,   45,   56,   56,
-       22,   56,   56,    1,   56,   56,    6,   56,    8,   25,
-       56,   56,   56,   56,   56,    0,   59,   59,   56,   26,
-       56,   56,    4,    5,   56,   11,   56,   56,   56,   56,
-       59,   59,   63,   60,   27,   10,   56,   56,   14,    7,
-       56,    9,   59,   56,   13,    2,   56,   12,    0
+       60,   64,   43,    0,   60,   64,   44,   45,   57,   57,
+       22,   57,   57,    1,   57,   57,    6,   57,    8,   25,
+       57,   57,   57,   57,   57,    0,   60,   60,   57,   26,
+       57,   57,    4,    5,   57,   11,   57,   57,   57,   57,
+       60,   60,   64,   61,   27,   10,   57,   57,   14,    7,
+       57,    9,   60,   57,   13,    2,   57,   12,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -910,268 +910,274 @@ return PRINT;
 /* operador de comparación */
 case 15:
 YY_RULE_SETUP
-#line 35 "gram.l"
+#line 36 "gram.l"
 return OPERADOR_COMP;
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 36 "gram.l"
+#line 37 "gram.l"
 return OPERADOR_COMP;
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 37 "gram.l"
+#line 38 "gram.l"
 return OPERADOR_COMP;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 38 "gram.l"
+#line 39 "gram.l"
 return OPERADOR_COMP;
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 39 "gram.l"
+#line 40 "gram.l"
 return OPERADOR_COMP;
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 40 "gram.l"
+#line 41 "gram.l"
 return OPERADOR_COMP;
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 41 "gram.l"
+#line 42 "gram.l"
 return IN;
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 42 "gram.l"
+#line 43 "gram.l"
 return OPERADOR_COMP;
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 43 "gram.l"
+#line 44 "gram.l"
 return OPERADOR_COMP;
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 44 "gram.l"
+#line 45 "gram.l"
 return OPERADOR_COMP;
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 45 "gram.l"
+#line 46 "gram.l"
 return NOT;
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 46 "gram.l"
+#line 47 "gram.l"
 return BOOL_STATE;
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 47 "gram.l"
+#line 48 "gram.l"
 return BOOL_STATE;
 	YY_BREAK
 case 28:
 /* rule 28 can match eol */
 YY_RULE_SETUP
-#line 51 "gram.l"
-{return BLANK_TAB_SPACE;} //Incremento la variable de linea
+#line 52 "gram.l"
+return BLANK_TAB_SPACE;
 	YY_BREAK
 /* operators */
 case 29:
 YY_RULE_SETUP
-#line 53 "gram.l"
+#line 54 "gram.l"
 return OPERADOR;
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 54 "gram.l"
+#line 55 "gram.l"
 return OPERADOR;
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 55 "gram.l"
+#line 56 "gram.l"
 return OPERADOR;
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 56 "gram.l"
+#line 57 "gram.l"
 return OPERADOR;
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 57 "gram.l"
+#line 58 "gram.l"
 return OPERADOR;
 	YY_BREAK
 /* delimitadores */
 case 34:
 YY_RULE_SETUP
-#line 61 "gram.l"
+#line 62 "gram.l"
 return PAR_ABRE;
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 62 "gram.l"
+#line 63 "gram.l"
 return PAR_CIERRA;
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 63 "gram.l"
+#line 64 "gram.l"
 return COR_ABRE;
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 64 "gram.l"
+#line 65 "gram.l"
 return COR_CIERRA;
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 65 "gram.l"
+#line 66 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 66 "gram.l"
+#line 67 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 67 "gram.l"
+#line 68 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 68 "gram.l"
+#line 69 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 69 "gram.l"
+#line 70 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 70 "gram.l"
+#line 71 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 71 "gram.l"
+#line 72 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 72 "gram.l"
+#line 73 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 73 "gram.l"
+#line 74 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 74 "gram.l"
+#line 75 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 75 "gram.l"
+#line 76 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 76 "gram.l"
+#line 77 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 77 "gram.l"
+#line 78 "gram.l"
 return ASSIGN;
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 78 "gram.l"
+#line 79 "gram.l"
 return SEMICOLON;
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 79 "gram.l"
+#line 80 "gram.l"
 return COMA;
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 80 "gram.l"
+#line 81 "gram.l"
 return COLON;
 	YY_BREAK
-/* skip whitespace */
 case 54:
 YY_RULE_SETUP
-#line 83 "gram.l"
-;
+#line 82 "gram.l"
+return PUNTO;
 	YY_BREAK
-/* skip comments */
+/* skip whitespace */
 case 55:
 YY_RULE_SETUP
 #line 85 "gram.l"
-skipcomments();
+;
 	YY_BREAK
+/* skip comments */
 case 56:
 YY_RULE_SETUP
 #line 87 "gram.l"
-return IDENTIFICADOR;
+skipcomments();
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 88 "gram.l"
-return ENTERO;
+#line 89 "gram.l"
+return IDENTIFICADOR;
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 89 "gram.l"
-return LONG_ENTERO;
+#line 90 "gram.l"
+return ENTERO;
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 90 "gram.l"
-return DECIMAL;
+#line 91 "gram.l"
+return LONG_ENTERO;
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 91 "gram.l"
-return IMAGINARIO;
+#line 92 "gram.l"
+return DECIMAL;
 	YY_BREAK
 case 61:
-/* rule 61 can match eol */
 YY_RULE_SETUP
-#line 92 "gram.l"
-return CADENA;
+#line 93 "gram.l"
+return IMAGINARIO;
 	YY_BREAK
 case 62:
 /* rule 62 can match eol */
 YY_RULE_SETUP
-#line 93 "gram.l"
+#line 94 "gram.l"
 return CADENA;
 	YY_BREAK
 case 63:
+/* rule 63 can match eol */
 YY_RULE_SETUP
 #line 95 "gram.l"
+return CADENA;
+	YY_BREAK
+case 64:
+YY_RULE_SETUP
+#line 97 "gram.l"
 return ER;
 	YY_BREAK
 /* anything else is an error */
-case 64:
-YY_RULE_SETUP
-#line 98 "gram.l"
-{yyerror("invalid character"); return ER;}
-	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 99 "gram.l"
+#line 100 "gram.l"
+return ER;
+	YY_BREAK
+/* <<EOF>> return END_FILE; */
+case 66:
+YY_RULE_SETUP
+#line 104 "gram.l"
 ECHO;
 	YY_BREAK
-#line 1175 "lex.yy.c"
+#line 1181 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2176,7 +2182,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 99 "gram.l"
+#line 104 "gram.l"
 
 int yywrap(void) {
  return 1;

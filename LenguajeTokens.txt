@@ -1,0 +1,42 @@
+IMPORTidentificador=os
+
+DEFidentificador=evalparAbre=(identificador=xicoma=,identificador=expparCierra=)colon=:
+identificador=ansassign==FALSE
+FORidentificador=iINRANGEparAbre=(LENparAbre=(identificador=expparCierra=)parCierra=)colon=:
+identificador=partassign==ERROR=?TRUE
+FORidentificador=jINRANGEparAbre=(LENparAbre=(identificador=expcorAbre=[identificador=icorCierra=]parCierra=)parCierra=)colon=:
+identificador=partassign==identificador=partoperadorComp=andidentificador=xicorAbre=[identificador=expcorAbre=[identificador=icorCierra=]corAbre=[identificador=jcorCierra=]corCierra=]
+identificador=ansassign==identificador=ansoperadorComp=oridentificador=part
+RETURNidentificador=ans
+
+
+WHILEentero=2operador=*identificador=ioperadorComp=<=longEntero=40000L
+identificador=hassign==decimal=3.4e-5operador=+imaginario=5j
+IFidentificador=ioperadorComp===entero=0colon=:
+BREAK
+DEFidentificador=otra_funparAbre=(parCierra=)colon=:
+PASS
+
+PRINTparAbre=(cadena='Esta es la respuesta'coma=,identificador=concoma=,cadena='y la expresión 'coma=,entero=3operador=*identificador=ientero=+5operador=*parAbre=(entero=7operador=-identificador=xparCierra=)parCierra=)
+identificador=tableassign==corAbre=[corCierra=]
+identificador=yassign==corAbre=[corCierra=]
+
+
+14 Identificadores
+
+Id1=os
+Id2=eval
+Id3=xi
+Id4=exp
+Id5=ans
+Id6=i
+Id7=part
+Id8=j
+Id9=h
+Id10=otra_fun
+Id11=con
+Id12=x
+Id13=table
+Id14=y
+
+1 Errores

@@ -13,3 +13,11 @@ gram-debug:
 	gcc lex.yy.c y.tab.c gram.c -DYYDEBUG
 	@echo "======================"
 	./a.out config.in
+
+lex:
+	clear
+	yacc -d gram.y
+	lex ./gram.l
+	gcc ./lex.yy.c ./lex.c -o myscanner
+	@echo "======================"
+	@./myscanner < config.in

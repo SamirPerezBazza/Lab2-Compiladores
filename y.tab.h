@@ -83,20 +83,7 @@ extern int yydebug;
     COMA = 33,
     COLON = 34,
     PUNTO = 35,
-    BITWISE_DER_ASSIGN = 36,
-    BITWISE_IZQ_ASSIGN = 37,
-    SUMA_ASSIGN = 38,
-    RESTA_ASSIGN = 39,
-    MULT_ASSIGN = 40,
-    DIV_ASSIGN = 41,
-    DIV_ENT_ASSIGN = 42,
-    BITWISE_AND_ASSIGN = 43,
-    BITWISE_OR_ASSIGN = 44,
-    BITWISE_XOR_ASSIGN = 45,
-    EXP_ASSIGN = 46,
-    MOD_ASSIGN = 47,
-    RESERVADA = 48,
-    BLANK_TAB_SPACE = 49,
+    BLANK_TAB_SPACE = 36,
     ER = 999
   };
 #endif
@@ -135,20 +122,7 @@ extern int yydebug;
 #define COMA 33
 #define COLON 34
 #define PUNTO 35
-#define BITWISE_DER_ASSIGN 36
-#define BITWISE_IZQ_ASSIGN 37
-#define SUMA_ASSIGN 38
-#define RESTA_ASSIGN 39
-#define MULT_ASSIGN 40
-#define DIV_ASSIGN 41
-#define DIV_ENT_ASSIGN 42
-#define BITWISE_AND_ASSIGN 43
-#define BITWISE_OR_ASSIGN 44
-#define BITWISE_XOR_ASSIGN 45
-#define EXP_ASSIGN 46
-#define MOD_ASSIGN 47
-#define RESERVADA 48
-#define BLANK_TAB_SPACE 49
+#define BLANK_TAB_SPACE 36
 #define ER 999
 
 /* Value type.  */
