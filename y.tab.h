@@ -56,12 +56,15 @@ extern int yydebug;
     NOT = 6,
     DEF = 7,
     RETURN = 8,
+    ENTERO = 9,
+    LONG_ENTERO = 10,
+    DECIMAL = 11,
+    IMAGINARIO = 12,
+    CADENA = 13,
+    IF = 14,
+    ELIF = 15,
+    ELSE = 16,
     IDENTIFICADOR = 21,
-    ENTERO = 22,
-    LONG_ENTERO = 23,
-    DECIMAL = 24,
-    IMAGINARIO = 25,
-    CADENA = 26,
     PAR_ABRE = 27,
     PAR_CIERRA = 28,
     COR_ABRE = 29,
@@ -96,12 +99,15 @@ extern int yydebug;
 #define NOT 6
 #define DEF 7
 #define RETURN 8
+#define ENTERO 9
+#define LONG_ENTERO 10
+#define DECIMAL 11
+#define IMAGINARIO 12
+#define CADENA 13
+#define IF 14
+#define ELIF 15
+#define ELSE 16
 #define IDENTIFICADOR 21
-#define ENTERO 22
-#define LONG_ENTERO 23
-#define DECIMAL 24
-#define IMAGINARIO 25
-#define CADENA 26
 #define PAR_ABRE 27
 #define PAR_CIERRA 28
 #define COR_ABRE 29

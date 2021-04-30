@@ -17,6 +17,9 @@ imaginario ({entero}|{decimal})[jJ]
  /*Funciones*/
 "def" return DEF;
 "return" return RETURN;
+"if" return IF;
+"elif" return ELIF;
+"else" return ELSE;
 
  /* operador de comparación */
 [<>] return OPERADOR_COMP;

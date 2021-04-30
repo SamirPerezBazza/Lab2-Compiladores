@@ -12,15 +12,20 @@
 %token DEF 7
 %token RETURN 8
 
+//NUMEROS 
+%token ENTERO 9
+%token LONG_ENTERO 10
+%token DECIMAL 11
+%token IMAGINARIO 12
+%token CADENA 13
+
+//IF
+%token IF 14
+%token ELIF 15
+%token ELSE 16
+
 //IDENTIFICADOR 
 %token IDENTIFICADOR 21
-
-//NUMEROS 
-%token ENTERO 22
-%token LONG_ENTERO 23
-%token DECIMAL 24
-%token IMAGINARIO 25
-%token CADENA 26
 
 //DELIMITADORES
 %token PAR_ABRE 27
@@ -66,7 +71,6 @@
 program:
  program statements {printf("statement\n");}
  | program BLANK_TAB_SPACE {yylineno++;printf("vacio\n");} 
- | program func {printf("funcion\n");}
  |
  ;
 statements:
@@ -76,6 +80,8 @@ statements:
 statement: error
  | expr 
  | assignment
+ | func
+ | ifStatement
  | BLANK_TAB_SPACE {yylineno++;}
  ;
 
@@ -99,7 +105,7 @@ exprs:
 ;
 
 expr: 
- ENTERO {/*  printf("lineExpr=%d\n", yylineno); */}
+ numeros {/*  printf("lineExpr=%d\n", yylineno); */}
  | CADENA 
  | lista 
  | boolExpr 
@@ -108,6 +114,13 @@ expr:
  | PAR_ABRE expr PAR_CIERRA
  | functCall
  | ER {printf("Pls\n");}
+ ;
+
+numeros:
+ ENTERO
+ | DECIMAL
+ | IMAGINARIO
+ | LONG_ENTERO
  ;
 
 functCall:
@@ -157,6 +170,14 @@ parametros:
 IDENTIFICADOR
  | parametros COMA parametros
 ;
+
+ifStatement:
+ IF boolExpr COLON statements 
+ | ELIF boolExpr COLON statements 
+ | ELSE COLON statements 
+;
+
+
 %%
 /* int main(void) {
  yyparse();
