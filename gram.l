@@ -62,9 +62,22 @@ imaginario ({entero}|{decimal})[jJ]
 "[" return COR_ABRE;
 "]" return COR_CIERRA;
 "=" return ASSIGN;
+"+="   return ASSIGN;
+"-=" return ASSIGN;
+"*=" return ASSIGN;
+"/=" return ASSIGN;
+"//=" return ASSIGN;
+"<<=" return ASSIGN;
+">>=" return ASSIGN;
+"&=" return ASSIGN;
+"|=" return ASSIGN;
+"^=" return ASSIGN;
+"**=" return ASSIGN;
+"%=" return ASSIGN;
 ";" return SEMICOLON;
 "," return COMA;
 ":" return COLON;
+"." return PUNTO;
 
  /* skip whitespace */
 [ \t] ;
@@ -82,7 +95,7 @@ imaginario ({entero}|{decimal})[jJ]
 ({entero}|{decimal}){identificador} return ER;
 
  /* anything else is an error */
-. {yyerror("invalid character"); return ER;}
+. return ER;
 %%
 int yywrap(void) {
  return 1;

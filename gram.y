@@ -53,18 +53,6 @@
 %token COMA 33
 %token COLON 34
 %token PUNTO 35
-%token BITWISE_DER_ASSIGN 36
-%token BITWISE_IZQ_ASSIGN 37
-%token SUMA_ASSIGN 38
-%token RESTA_ASSIGN 39
-%token MULT_ASSIGN 40
-%token DIV_ASSIGN 41
-%token DIV_ENT_ASSIGN 42
-%token BITWISE_AND_ASSIGN 43
-%token BITWISE_OR_ASSIGN 44
-%token BITWISE_XOR_ASSIGN 45
-%token EXP_ASSIGN 46
-%token MOD_ASSIGN 47
 
 
 %token RESERVADA 48
@@ -133,6 +121,7 @@ expr:
  numeros {/*  printf("lineExpr=%d\n", yylineno); */}
  | CADENA 
  | lista 
+ | matriz
  | boolExpr 
  | aritExpr 
  | posLista 
@@ -175,10 +164,18 @@ listaIN:
  | listaIN COMA expr 
 ;
 
+matriz:
+ posLista listaCuerpo
+;
+
+listaCuerpo:
+ COR_ABRE aritExpr COR_CIERRA
+ | COR_ABRE ENTERO COR_CIERRA
+ | COR_ABRE IDENTIFICADOR COR_CIERRA
+;
+
 posLista:
- IDENTIFICADOR COR_ABRE aritExpr COR_CIERRA
- | IDENTIFICADOR COR_ABRE ENTERO COR_CIERRA
- | IDENTIFICADOR COR_ABRE IDENTIFICADOR COR_CIERRA
+ IDENTIFICADOR listaCuerpo  
  ;
 
 func:
