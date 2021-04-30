@@ -24,8 +24,24 @@
 %token ELIF 15
 %token ELSE 16
 
+//FOR
+%token FOR 17
+%token RANGE 18
+%token LEN 19
+
+//WHILE
+%token WHILE 20
+
 //IDENTIFICADOR 
 %token IDENTIFICADOR 21
+
+//RESERVED 
+%token BREAK 22
+%token PASS 23
+%token CONTINUE 24
+%token IMPORT 25
+%token PRINT 26
+
 
 //DELIMITADORES
 %token PAR_ABRE 27
@@ -53,6 +69,8 @@
 
 %token RESERVADA 48
 %token BLANK_TAB_SPACE 49
+
+
 
 %token ER 999
 %start program
@@ -82,6 +100,13 @@ statement: error
  | assignment
  | func
  | ifStatement
+ | forStatement
+ | whileStatement
+ | PASS
+ | BREAK
+ | CONTINUE
+ | import
+ | print
  | BLANK_TAB_SPACE {yylineno++;}
  ;
 
@@ -178,6 +203,36 @@ ifStatement:
 ;
 
 
+forStatement:
+ FOR IDENTIFICADOR IN sequence COLON statements
+;
+
+whileStatement:
+ WHILE boolExpr COLON statements
+;
+
+sequence:
+ lista
+ | rango
+;
+
+rango:
+ RANGE PAR_ABRE expr PAR_CIERRA
+ | RANGE PAR_ABRE expr COMA expr PAR_CIERRA
+ | RANGE PAR_ABRE len PAR_CIERRA
+;
+
+len:
+ LEN PAR_ABRE expr PAR_CIERRA
+;
+
+import:
+  IMPORT IDENTIFICADOR
+;
+
+print:
+ PRINT PAR_ABRE listaIN PAR_CIERRA
+;
 %%
 /* int main(void) {
  yyparse();

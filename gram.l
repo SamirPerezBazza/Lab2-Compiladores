@@ -20,6 +20,15 @@ imaginario ({entero}|{decimal})[jJ]
 "if" return IF;
 "elif" return ELIF;
 "else" return ELSE;
+"for" return FOR;
+"range" return RANGE;
+"len" return LEN;
+"while" return WHILE;
+"break" return BREAK;
+"pass" return PASS;
+"continue" return CONTINUE;
+"import" return IMPORT;
+"print" return PRINT;
 
  /* operador de comparación */
 [<>] return OPERADOR_COMP;

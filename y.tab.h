@@ -64,7 +64,16 @@ extern int yydebug;
     IF = 14,
     ELIF = 15,
     ELSE = 16,
+    FOR = 17,
+    RANGE = 18,
+    LEN = 19,
+    WHILE = 20,
     IDENTIFICADOR = 21,
+    BREAK = 22,
+    PASS = 23,
+    CONTINUE = 24,
+    IMPORT = 25,
+    PRINT = 26,
     PAR_ABRE = 27,
     PAR_CIERRA = 28,
     COR_ABRE = 29,
@@ -107,7 +116,16 @@ extern int yydebug;
 #define IF 14
 #define ELIF 15
 #define ELSE 16
+#define FOR 17
+#define RANGE 18
+#define LEN 19
+#define WHILE 20
 #define IDENTIFICADOR 21
+#define BREAK 22
+#define PASS 23
+#define CONTINUE 24
+#define IMPORT 25
+#define PRINT 26
 #define PAR_ABRE 27
 #define PAR_CIERRA 28
 #define COR_ABRE 29
