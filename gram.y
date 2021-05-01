@@ -93,6 +93,7 @@ statement: error
  | CONTINUE
  | import
  | print
+ | RETURN expr
  | BLANK_TAB_SPACE {yylineno++;}
  ;
 
@@ -179,8 +180,7 @@ posLista:
  ;
 
 func:
- funcDeclare statements 
- | funcDeclare statements RETURN expr
+ funcDeclare statements
 ;
 
 funcDeclare:
