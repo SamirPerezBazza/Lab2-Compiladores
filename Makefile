@@ -1,7 +1,7 @@
 gram:
 	clear
 	yacc -d gram.y
-	lex gram.l
+	lex ./gram.l
 	gcc lex.yy.c y.tab.c gram.c
 	@echo "======================"
 	./a.out config.in
@@ -21,3 +21,10 @@ lex:
 	gcc ./lex.yy.c ./lex.c -o myscanner
 	@echo "======================"
 	@./myscanner < config.in
+
+release:
+	clear
+	yacc -d gram.y
+	lex ./gram.l
+	gcc lex.yy.c y.tab.c gram.c -o LAB02_PucheGuevara_PerezBazza
+	gcc ./lex.yy.c ./lex.c -o LAB01_PucheGuevara_PerezBazza

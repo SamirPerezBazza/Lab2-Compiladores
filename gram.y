@@ -122,7 +122,7 @@ expr:
  | lista 
  | matriz
  | boolExpr 
- | aritExpr {printf("Arithmetic\n");}
+ | aritExpr
  | posLista 
  | PAR_ABRE expr PAR_CIERRA
  | functCall
