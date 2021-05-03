@@ -28,3 +28,6 @@ release:
 	lex ./LAB01_PucheGuevara_PerezBazza.l
 	gcc lex.yy.c y.tab.c LAB02_PucheGuevara_PerezBazza.c -o LAB02_PucheGuevara_PerezBazza
 	gcc ./lex.yy.c ./LAB01_PucheGuevara_PerezBazza.c -o LAB01_PucheGuevara_PerezBazza
+
+test:
+	./LAB02_PucheGuevara_PerezBazza config.in

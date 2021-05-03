@@ -1,25 +1,17 @@
-import os
-
-def eval(xi, exp):
-   ans = False
-   for i in range(len(exp)):
-      part =? True
-      for j in range(len(exp[i])):
-         part = part and xi[exp[i][j]]
-         ans = ans or part
-   return ans
-
-# comentario ignorado
-
-while 2*i<=40000L
-   h = 3.4e-5 + 5j
-   if i == 0:
-      break
-def otra_fun():
-   pass
-
-print('Esta es la respuesta',con, 'y la expresión ', 3*i + 5*(7-x))
-#string de la hipotesis
-table = []
-y = []
-#i = 0
+clusters = []
+for123 i in range(n):
+    append(clusters[2*x + 45])
+    for j ina range(i+1,n):
+        if clusters[i][j] != -1 :
+            append(?adj[i][j])
+for li$ne in clusters:
+	x = []
+        "clust
+	for i in aux :
+		if (i == '1') :
+			x.append(True)
+			pass?
+		else :
+			x.append(False)
+			return
+	table.append(x)
