@@ -1,2 +1,7 @@
 Prueba con el archivo de entrada
-0 errores
+Linea 2 error
+Linea 4 error
+Linea 6 error
+Linea 7 error
+Linea 9 error
+Linea 13 error

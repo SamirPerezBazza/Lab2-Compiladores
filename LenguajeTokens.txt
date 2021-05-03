@@ -19,5 +19,19 @@ identificador=tablepunto=.identificador=appendparAbre=(identificador=xparCierra=
 
 14 Identificadores
 
+Id1=clusters
+Id2=for123
+Id3=i
+Id4=n
+Id5=append
+Id6=x
+Id7=j
+Id8=ina
+Id9=adj
+Id10=li
+Id11=ne
+Id12=clust
+Id13=aux
+Id14=table
 
 4 Errores
